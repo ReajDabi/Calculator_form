@@ -36,7 +36,8 @@ namespace Calculator_form
         private void btnC_Click(object sender, EventArgs e)
         {
             lblResult.Text = "0";
-
+            FirstNumber = 0;
+            Operation = "";
         }
 
         private void num7_Click(object sender, EventArgs e)
@@ -162,7 +163,14 @@ namespace Calculator_form
         }
         private void button3_Click(object sender, EventArgs e)
         {
-
+            if (lblResult.Text.Length > 1)
+            {
+                lblResult.Text = lblResult.Text.Substring(0, lblResult.Text.Length - 1);
+            }
+            else
+            {
+                lblResult.Text = "0";
+            }
         }
         private void btnMult_Click(object sender, EventArgs e)
         {
