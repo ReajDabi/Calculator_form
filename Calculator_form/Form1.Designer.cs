@@ -1,6 +1,6 @@
 ﻿namespace Calculator_form
 {
-    partial class Form1
+    partial class winCalculator
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(winCalculator));
             btnCE = new Button();
             btnC = new Button();
             btnEqual = new Button();
@@ -44,7 +45,10 @@
             num3 = new Button();
             num2 = new Button();
             num1 = new Button();
-            lblResult = new Label();
+            lblResult = new TextBox();
+            num0 = new Button();
+            button1 = new Button();
+            btnDot = new Button();
             SuspendLayout();
             // 
             // btnCE
@@ -61,7 +65,7 @@
             // btnC
             // 
             btnC.BackColor = SystemColors.ScrollBar;
-            btnC.Location = new Point(112, 140);
+            btnC.Location = new Point(209, 140);
             btnC.Name = "btnC";
             btnC.Size = new Size(91, 61);
             btnC.TabIndex = 0;
@@ -71,10 +75,10 @@
             // 
             // btnEqual
             // 
-            btnEqual.BackColor = SystemColors.ScrollBar;
-            btnEqual.Location = new Point(209, 140);
+            btnEqual.BackColor = SystemColors.InactiveCaption;
+            btnEqual.Location = new Point(209, 459);
             btnEqual.Name = "btnEqual";
-            btnEqual.Size = new Size(91, 61);
+            btnEqual.Size = new Size(188, 61);
             btnEqual.TabIndex = 0;
             btnEqual.Text = "=";
             btnEqual.UseVisualStyleBackColor = false;
@@ -89,6 +93,7 @@
             btndiv.TabIndex = 0;
             btndiv.Text = "/";
             btndiv.UseVisualStyleBackColor = false;
+            btndiv.Click += btndiv_Click;
             // 
             // btnMult
             // 
@@ -97,33 +102,36 @@
             btnMult.Name = "btnMult";
             btnMult.Size = new Size(91, 61);
             btnMult.TabIndex = 0;
-            btnMult.Text = "X";
+            btnMult.Text = "x";
             btnMult.UseVisualStyleBackColor = false;
+            btnMult.Click += btnMult_Click;
             // 
             // num9
             // 
             num9.BackColor = SystemColors.ScrollBar;
-            num9.Location = new Point(209, 220);
+            num9.Location = new Point(112, 140);
             num9.Name = "num9";
             num9.Size = new Size(91, 61);
             num9.TabIndex = 0;
             num9.Text = "9";
             num9.UseVisualStyleBackColor = false;
+            num9.Click += num9_Click;
             // 
             // num8
             // 
             num8.BackColor = SystemColors.ScrollBar;
-            num8.Location = new Point(112, 220);
+            num8.Location = new Point(209, 220);
             num8.Name = "num8";
             num8.Size = new Size(91, 61);
             num8.TabIndex = 0;
             num8.Text = "8";
             num8.UseVisualStyleBackColor = false;
+            num8.Click += num8_Click;
             // 
             // num7
             // 
             num7.BackColor = SystemColors.ScrollBar;
-            num7.Location = new Point(15, 220);
+            num7.Location = new Point(112, 220);
             num7.Name = "num7";
             num7.Size = new Size(91, 61);
             num7.TabIndex = 0;
@@ -134,32 +142,35 @@
             // num4
             // 
             num4.BackColor = SystemColors.ScrollBar;
-            num4.Location = new Point(15, 303);
+            num4.Location = new Point(112, 303);
             num4.Name = "num4";
             num4.Size = new Size(91, 61);
             num4.TabIndex = 0;
             num4.Text = "4";
             num4.UseVisualStyleBackColor = false;
+            num4.Click += num4_Click;
             // 
             // num5
             // 
             num5.BackColor = SystemColors.ScrollBar;
-            num5.Location = new Point(112, 303);
+            num5.Location = new Point(209, 303);
             num5.Name = "num5";
             num5.Size = new Size(91, 61);
             num5.TabIndex = 0;
             num5.Text = "5";
             num5.UseVisualStyleBackColor = false;
+            num5.Click += num5_Click;
             // 
             // num6
             // 
             num6.BackColor = SystemColors.ScrollBar;
-            num6.Location = new Point(209, 303);
+            num6.Location = new Point(15, 220);
             num6.Name = "num6";
             num6.Size = new Size(91, 61);
             num6.TabIndex = 0;
             num6.Text = "6";
             num6.UseVisualStyleBackColor = false;
+            num6.Click += num6_Click;
             // 
             // btnAdd
             // 
@@ -170,6 +181,7 @@
             btnAdd.TabIndex = 0;
             btnAdd.Text = "+";
             btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnMinus
             // 
@@ -180,31 +192,34 @@
             btnMinus.TabIndex = 0;
             btnMinus.Text = "-";
             btnMinus.UseVisualStyleBackColor = false;
+            btnMinus.Click += btnMinus_Click;
             // 
             // num3
             // 
             num3.BackColor = SystemColors.ScrollBar;
-            num3.Location = new Point(209, 383);
+            num3.Location = new Point(15, 303);
             num3.Name = "num3";
             num3.Size = new Size(91, 61);
             num3.TabIndex = 0;
             num3.Text = "3";
             num3.UseVisualStyleBackColor = false;
+            num3.Click += num3_Click;
             // 
             // num2
             // 
             num2.BackColor = SystemColors.ScrollBar;
-            num2.Location = new Point(112, 383);
+            num2.Location = new Point(209, 383);
             num2.Name = "num2";
             num2.Size = new Size(91, 61);
             num2.TabIndex = 0;
             num2.Text = "2";
             num2.UseVisualStyleBackColor = false;
+            num2.Click += num2_Click;
             // 
             // num1
             // 
             num1.BackColor = SystemColors.ScrollBar;
-            num1.Location = new Point(15, 383);
+            num1.Location = new Point(112, 383);
             num1.Name = "num1";
             num1.Size = new Size(91, 61);
             num1.TabIndex = 0;
@@ -214,22 +229,58 @@
             // 
             // lblResult
             // 
+            lblResult.BackColor = SystemColors.ControlLightLight;
             lblResult.BorderStyle = BorderStyle.FixedSingle;
-            lblResult.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblResult.Location = new Point(15, 44);
+            lblResult.Font = new Font("Segoe UI", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblResult.Location = new Point(15, 31);
+            lblResult.Multiline = true;
             lblResult.Name = "lblResult";
-            lblResult.Size = new Size(382, 53);
+            lblResult.ReadOnly = true;
+            lblResult.Size = new Size(382, 69);
             lblResult.TabIndex = 1;
-            lblResult.Text = "\r\n0.0";
-            lblResult.TextAlign = ContentAlignment.MiddleRight;
-            lblResult.Click += lblResult_Click;
+            lblResult.Text = "0";
+            lblResult.TextAlign = HorizontalAlignment.Right;
             // 
-            // Form1
+            // num0
+            // 
+            num0.BackColor = SystemColors.ScrollBar;
+            num0.Location = new Point(15, 383);
+            num0.Name = "num0";
+            num0.Size = new Size(91, 61);
+            num0.TabIndex = 0;
+            num0.Text = "0";
+            num0.UseVisualStyleBackColor = false;
+            num0.Click += num1_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.ScrollBar;
+            button1.Location = new Point(112, 459);
+            button1.Name = "button1";
+            button1.Size = new Size(91, 61);
+            button1.TabIndex = 0;
+            button1.Text = "Del";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button3_Click;
+            // 
+            // btnDot
+            // 
+            btnDot.BackColor = SystemColors.ScrollBar;
+            btnDot.Location = new Point(15, 459);
+            btnDot.Name = "btnDot";
+            btnDot.Size = new Size(91, 61);
+            btnDot.TabIndex = 0;
+            btnDot.Text = ".";
+            btnDot.UseVisualStyleBackColor = false;
+            btnDot.Click += btnDot_Click;
+            // 
+            // winCalculator
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(416, 456);
+            ClientSize = new Size(416, 545);
             Controls.Add(lblResult);
+            Controls.Add(num0);
             Controls.Add(num1);
             Controls.Add(num2);
             Controls.Add(num3);
@@ -243,12 +294,16 @@
             Controls.Add(num9);
             Controls.Add(btnMult);
             Controls.Add(btndiv);
+            Controls.Add(btnDot);
+            Controls.Add(button1);
             Controls.Add(btnEqual);
             Controls.Add(btnC);
             Controls.Add(btnCE);
-            Name = "Form1";
-            Text = "Form1";
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "winCalculator";
+            Text = "Calculator";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -269,6 +324,9 @@
         private Button num3;
         private Button num2;
         private Button num1;
-        private Label lblResult;
+        private TextBox lblResult;
+        private Button num0;
+        private Button button1;
+        private Button btnDot;
     }
 }
