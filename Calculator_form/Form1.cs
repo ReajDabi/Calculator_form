@@ -14,7 +14,7 @@ namespace Calculator_form
 
         }
 
-       
+
 
         private void btnCE_Click(object sender, EventArgs e)
         {
@@ -23,7 +23,14 @@ namespace Calculator_form
 
         private void num1_Click(object sender, EventArgs e)
         {
-            lblResult.Text = lblResult.Text + "0";
+            if (lblResult.Text == "0" && lblResult.Text != null)
+            {
+                lblResult.Text = "1";
+            }
+            else
+            {
+                lblResult.Text = lblResult.Text + "1";
+            }
         }
 
         private void btnC_Click(object sender, EventArgs e)
@@ -153,14 +160,17 @@ namespace Calculator_form
             lblResult.Text = "0";
             Operation = "-";
         }
+        private void button3_Click(object sender, EventArgs e)
+        {
 
+        }
         private void btnMult_Click(object sender, EventArgs e)
         {
             FirstNumber = Convert.ToDouble(lblResult.Text);
             lblResult.Text = "0";
             Operation = "x";
         }
-        private void button3_Click(object sender, EventArgs e)
+        private void btnEqual_Click(object sender, EventArgs e)
         {
             double SecondNumber;
             double Result;
@@ -199,6 +209,11 @@ namespace Calculator_form
                     FirstNumber = Result;
                 }
             }
+        }
+
+        private void num0_Click(object sender, EventArgs e)
+        {
+            lblResult.Text = lblResult.Text+ "0";
         }
     }
 }

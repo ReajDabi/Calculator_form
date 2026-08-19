@@ -82,7 +82,7 @@
             btnEqual.TabIndex = 0;
             btnEqual.Text = "=";
             btnEqual.UseVisualStyleBackColor = false;
-            btnEqual.Click += button3_Click;
+            btnEqual.Click += btnEqual_Click;
             // 
             // btndiv
             // 
@@ -250,7 +250,7 @@
             num0.TabIndex = 0;
             num0.Text = "0";
             num0.UseVisualStyleBackColor = false;
-            num0.Click += num1_Click;
+            num0.Click += num0_Click;
             // 
             // button1
             // 
@@ -328,5 +328,6 @@
         private Button num0;
         private Button button1;
         private Button btnDot;
+        private Button button3;
     }
 }
